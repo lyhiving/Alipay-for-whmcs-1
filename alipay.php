@@ -91,7 +91,7 @@ function alipay_form($params) {
                     document.getElementById("alipayimg").style.display="none";
                     document.getElementById("alipayDiv").innerHTML="支付成功";
                     //延迟 2 秒执行 tz() 方法
-                    setTimeout(function(){tz()}, 5000);
+                    setTimeout(function(){tz()}, 2000);
                     function tz(){
                         window.location.href="'.$systemurl.'/viewinvoice.php?id='.$invoiceid.'";
                     }
