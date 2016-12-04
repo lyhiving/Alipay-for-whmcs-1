@@ -58,12 +58,14 @@ function alipay_form($params) {
         "sign"    => $sign
         );
 
-    $url = 'http://pay.momohost.cn/gateways/pay.php';//请求的url地址
+    $url = 'https://pay.momohost.cn/gateways/pay.php';//请求的url地址
      
     $ch = curl_init();//打开
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $arrPostInfo);
     $response  = curl_exec($ch);
     curl_close($ch);//关闭
